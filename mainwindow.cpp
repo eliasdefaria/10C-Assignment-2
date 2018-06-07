@@ -53,7 +53,10 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->final_spinBox,SIGNAL(valueChanged(int)), this, SLOT(update_overall(int)));
 
     QObject::connect(ui->schemaPicker,SIGNAL(currentTextChanged(QString)), this, SLOT(update_schema(QString)));
+<<<<<<< HEAD
     QObject::connect(ui->classPicker,SIGNAL(currentTextChanged(QString)), this, SLOT(update_class(QString)));
+=======
+>>>>>>> 20aab481563c9cf57d1f947b7040b5e01e3f7c4e
 
 }
 
@@ -66,6 +69,7 @@ void MainWindow::update_schema(QString schema){
     update_overall(0);
 }
 
+<<<<<<< HEAD
 void MainWindow::update_class(QString schema){
     if(schema == "PIC 10B -- Intermediate Programming"){
         ui->spinBox->show();
@@ -155,6 +159,30 @@ void MainWindow::update_overall(int unused)
 
         }
 
+=======
+void MainWindow::update_overall(int unused)
+{
+    int hmwScore = ui->spinBox->value() + ui->spinBox_2->value() +
+                   ui->spinBox_3->value() + ui->spinBox_4->value() +
+                   ui->spinBox_5->value() + ui->spinBox_6->value() +
+                   ui->spinBox_7->value() + ui->spinBox_8->value();\
+
+    int midterm_1 = ui->midterm_spinBox_1->value();
+    int midterm_2 = ui->midterm_spinBox_2->value();
+
+    int final = ui->final_spinBox->value();
+    double score;
+    if(ui->schemaPicker->currentText() == "Schema A"){
+        score = static_cast<double>((0.25)*hmwScore + (0.2)*midterm_1 + (0.2)*midterm_2 + (0.35)*final);
+    }
+    else{
+        if(midterm_1 > midterm_2){
+            score = static_cast<double>((0.25)*hmwScore + (0.3)*midterm_1 + (0.44)*final);
+        }
+        else{
+            score = static_cast<double>((0.25)*hmwScore + (0.3)*midterm_2 + (0.44)*final);
+        }
+>>>>>>> 20aab481563c9cf57d1f947b7040b5e01e3f7c4e
     }
 
     //ui->label->setText(ui->schemaPicker->currentText());
@@ -162,4 +190,7 @@ void MainWindow::update_overall(int unused)
 
     return;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 20aab481563c9cf57d1f947b7040b5e01e3f7c4e
