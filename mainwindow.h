@@ -21,10 +21,7 @@ signals:
 public slots:
     void update_overall(int);
     void update_schema(QString);
-<<<<<<< HEAD
     void update_class(QString schema);
-=======
->>>>>>> 20aab481563c9cf57d1f947b7040b5e01e3f7c4e
 
 private:
     Ui::MainWindow *ui;
