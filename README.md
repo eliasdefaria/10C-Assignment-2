@@ -1,1 +1,1 @@
-# 10C-Assignment-2
+# Simple Grade Calculator
